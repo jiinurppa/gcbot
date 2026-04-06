@@ -1,0 +1,98 @@
+title: "gcbot - Raspberry Pi Pico"
+# https://splitbrain.github.io/pinoutleaf/
+# dimensions counted in pins
+width: 9
+height: 20
+
+# special pins
+types:
+  control:
+    label: "System Control"
+    bgcolor: "#ffaaaa"
+    fgcolor: "#000000"
+  debug:
+    label: "Debug"
+    bgcolor: "#ff88ff"
+    fgcolor: "#ffffff"
+  led:
+    label: "Onboard LED"
+    bgcolor: "#ffff00"
+    fgcolor: "#0"
+  uart_default:
+    label: "UART default"
+    bgcolor: "#0"
+    fgcolor: "#ffffff"
+  i2c_default:
+    label: "I2C default"
+    bgcolor: "#00aabb"
+    fgcolor: "#ffffff"
+  spi_default:
+    label: "SPI default"
+    bgcolor: "#9900ff"
+    fgcolor: "#ffffff"
+
+image:
+  front:
+    src: raspberry-pi-pico.front.png
+    top: -170
+    bottom: -20
+  back:
+    src: raspberry-pi-pico.back.png
+    top: -130
+    bottom: -30
+
+# Define the pins (label:type), use empty entries when offsets are needed
+pins:
+  left:
+    - [ "1" ]
+    - [ "2" ]
+    - [ "3", "GND:gnd"]
+    - [ "GPIO2:gpio", "GC DATA:spi" ]
+    - [ "5" ]
+    - [ "6" ]
+    - [ "GPIO5:gpio", "Controller DATA:spi" ]
+    - [ "6","GND:gnd", "Controller GND:spi"]
+    - [ "GPIO06:gpio", "Passthrough:control" ]
+    - [ "GPIO07:gpio", "DTM_Playback:control" ]
+    - [ "GPIO08:gpio", "DTM_Recording:control" ]
+    - [ "10" ]
+    - [ "13", "GND:gnd"]
+    - [ "GPIO10:gpio", "SPI1 SD_SCK:spi_default" ]
+    - [ "GPIO11:gpio", "SPI1 SD_MOSI:spi_default" ]
+    - [ "GPIO12:gpio", "SPI1 SD_MISO:spi_default"]
+    - [ "GPIO13:gpio", "SPI1 SD_CS:spi_default"]
+    - [ "18", "GND:gnd"]
+    - [ "GPIO14:gpio", "ST7735 RESET:i2c_default" ]
+    - [ "GPIO15:gpio", "ST7735 A0:i2c_default" ]
+
+  right:
+    - [ "40" ]
+    - [ "VSYS:power", "GC 3V3:spi" ]
+    - [ "38", "GND:gnd", "GC GND:spi" ]
+    - [ "37" ]
+    - [ "3V3(out):power", "SD/ST7735 VCC:i2c_default", "Controller 3V3:spi" ]
+    - [ "35"]
+    - [ "GPIO28:gpio", "Timing #1 (optional):analog" ]
+    - [ "33", "GND:gnd" ]
+    - [ "GPIO27:gpio", "Timing #2 (optional):analog" ]
+    - [ "GPIO26:gpio", "ST7735 Backlight:i2c_default"]
+    - [ "30"]
+    - [ "29" ]
+    - [ "28", "GND:gnd" ]
+    - [ "27" ]
+    - [ "26" ]
+    - [ "GPIO19:gpio", "SPI0 ST7735 SDA:i2c_default"]
+    - [ "GPIO18:gpio", "SPI0 ST7735 SCK:i2c_default" ]
+    - [ "23", "GND:gnd", "SD/ST7735 GND:i2c_default" ]
+    - [ "GPIO17:gpio", "SPI0 ST7735 CS:i2c_default" ]
+    - [ "21" ]
+
+  bottom:
+    -
+    -
+    -
+    - [ ]
+    - [ ]
+    - [ ]
+
+
