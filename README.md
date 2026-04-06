@@ -20,7 +20,7 @@ Operates in three modes:
 
 **DTM_Recording** mode with no SD card inserted.
 
-You can check out a video of how **DTM_Recording** and **DTM_Playback** modes run [here](https://youtu.be/JH5Yr9tbgrY) with a [Dolphin Emulator]((https://dolphin-emu.org)) run included for comparison. The `REC.DTM` file for these recordings is included in this repository.
+You can check out a video of how **DTM_Recording** and **DTM_Playback** modes run [here](https://youtu.be/JH5Yr9tbgrY) with a [Dolphin Emulator]((https://dolphin-emu.org)) run included for comparison. The `REC.DTM` file for these recordings is included in this repository. The header has been edited, so it can be run on Dolphin (see FAQ below). You'll need the PAL version of Metal Gear Solid: The Twin Snakes to try it out.
 
 ## Hardware
 
