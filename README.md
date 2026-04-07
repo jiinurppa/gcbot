@@ -53,7 +53,7 @@ A three-way toggle switch works best, but you can also just connect a jump wire 
 │ DTM_Playback  GPIO7 │ ──▸ │ pin 2 in   pin 2 out │ ──┤
 │ DTM_Recording GPIO8 │ ──▸ │ pin 3 in   pin 3 out │ ──┤
 │                     │     └──────────────────────┘   │ 
-│                  GND│ ◂──────────────────────────────┘
+│                 GND │ ◂──────────────────────────────┘
 └─────────────────────┘ 
 ```
 
