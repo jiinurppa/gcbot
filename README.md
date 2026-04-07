@@ -41,14 +41,14 @@ gcbot is powered by the GameCube `3V3` line, but you could also use the `5V` lin
 A three-way toggle switch works best, but you can also just connect a jump wire from GPIO6/7/8 to GND. The GPIO pins have pull-ups enabled. If nothing is connected, gcbot will default to **Passthrough** mode.
 
 ```
-GPIO6 / Passthrough   -> switch pin 1 in
-GPIO7 / DTM_Playback  -> switch pin 2 in
-GPIO8 / DTM_Recording -> switch pin 3 in
-```
-```
-switch pin 1 out -> GND
-switch pin 2 out -> GND
-switch pin 3 out -> GND
+         Pico                    Toggle Switch
+┌─────────────────────┐     ┌─────────────────────┐
+│GPIO6 / Passthrough  │ ──▸ │pin 1 in    pin 1 out│ ──┐
+│GPIO7 / DTM_Playback │ ──▸ │pin 2 in    pin 2 out│ ──┤
+│GPIO8 / DTM_Recording│ ──▸ │pin 3 in    pin 3 out│ ──┤
+│                     │     └─────────────────────┘   │ 
+│                  GND│ ◂─────────────────────────────┘
+└─────────────────────┘ 
 ```
 
 ### Optional Wiring
