@@ -5,7 +5,7 @@ Record and play DTM files on a GameCube.
 Operates in three modes:
 1. **Passthrough**: passes inputs from the controller to the GameCube and shows digital buttons on the screen when pressed. Great for checking if all the wires are properly connected. Also shows a blinking square at the bottom left corner, so you know it's running.
 2. **DTM_Playback**: reads a file named `REC.DTM` from the SD card and replays inputs to the GameCube. The display shows how many inputs have been sent to the GameCube as a percentage.
-3. **DTM_Recording**: passes inputs from the controller to the GameCube and records them to a file named `REC.DTM` on the SD card. The file is always overwritten when powering the Pico, so be careful! Pressing `Start + Z + Y` finishes the recording, `Start + Z + B` pauses the recording and `Start + Z + A` resumes recording.
+3. **DTM_Recording**: passes inputs from the controller to the GameCube and records them to a file named `REC.DTM` on the SD card. The file is always overwritten when powering the Pico, so be careful! Pressing `Start + Z + Y` stops recording and finalizes the DTM file, `Start + Z + B` pauses the recording and `Start + Z + A` resumes recording from a pause state.
 
 <br/>
 <img alt="Passthrough mode with A button pressed." src="./img/passthrough.jpg" width="240">
@@ -20,7 +20,7 @@ Operates in three modes:
 
 **DTM_Recording** mode with no SD card inserted.
 
-You can check out a video of how **DTM_Recording** and **DTM_Playback** modes run [here](https://youtu.be/JH5Yr9tbgrY) with a [Dolphin Emulator]((https://dolphin-emu.org)) run included for comparison. The `REC.DTM` file for these recordings is included in this repository. The header has been edited, so it can be run on Dolphin (see FAQ below). You'll need the PAL version of Metal Gear Solid: The Twin Snakes to try it out.
+You can check out a video of how **DTM_Recording** and **DTM_Playback** modes run [here](https://youtu.be/JH5Yr9tbgrY) with a [Dolphin Emulator]((https://dolphin-emu.org)) run included for comparison. The `REC.DTM` file for these recordings is included in this repository. The header has been edited, so it can be run on Dolphin (see FAQ below). You'll need the **PAL** version of **Metal Gear Solid: The Twin Snakes** to try it out.
 
 ## Hardware
 
@@ -67,7 +67,7 @@ PulseView showing `WaitForPoll` and `SendReport` timings and GameCube and contro
 
 ## FAQ
 
-**Q: Can it do TAS runs?**  
+**Q: Can gcbot do TAS runs?**  
 A: I doubt it. AFAIK a badly timed seek on the optical drive can cause a run to desync which makes frame perfect inputs impossible. Maybe running games from a solid state drive on a modded GameCube might work better. Same desync problem applies to normal runs as well.
 
 **Q: Can I run the `REC.DTM` file on Dolphin?**  
@@ -78,3 +78,9 @@ A: Yes, just rename the file to `REC.DTM` before transfering it to your SD card.
 
 **Q: Something went wrong and my computer doesn't recognize my SD card! Any advice?**  
 A: Use **SD Memory Card Formatter** ([Windows/macOS](https://www.sdcard.org/downloads/formatter/) and [Linux](https://www.sdcard.org/downloads/sd-memory-card-formatter-for-linux/)) with the `--discard` switch.
+
+
+## References
+
+[DTM Format (tasvideos.org)](https://tasvideos.org/EmulatorResources/Dolphin/DTM)  
+[FatFs - Generic FAT Filesystem Module (elm-chan.org)](https://elm-chan.org/fsw/ff/)
