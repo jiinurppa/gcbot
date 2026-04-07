@@ -1,8 +1,14 @@
 # gcbot or GameCube bot
 
-Record and play DTM files on a GameCube.
+Record and play DTM (Dolphin TAS Movie) files on a GameCube. A Raspberry Pi Pico acts as a man-in-the-middle between a controller and a GameCube and passes inputs, and records them to an SD card, from the controller or a DTM file to the GameCube.
 
-Operates in three modes:
+```
+┌────────────┐      ┌──────┐      ┌──────────┐
+│ Controller │ ◂──▸ │ Pico │ ◂──▸ │ GameCube │
+└────────────┘      └──────┘      └──────────┘
+```
+
+### Operates in three modes:
 1. **Passthrough**: passes inputs from the controller to the GameCube and shows digital buttons on the screen when pressed. Great for checking if all the wires are properly connected. Also shows a blinking square at the bottom left corner, so you know it's running.
 2. **DTM_Playback**: reads a file named `REC.DTM` from the SD card and replays inputs to the GameCube. The display shows how many inputs have been sent to the GameCube as a percentage.
 3. **DTM_Recording**: passes inputs from the controller to the GameCube and records them to a file named `REC.DTM` on the SD card. The file is always overwritten when powering the Pico, so be careful! Pressing `Start + Z + Y` stops recording and finalizes the DTM file, `Start + Z + B` pauses the recording and `Start + Z + A` resumes recording from a pause state.
@@ -42,12 +48,12 @@ A three-way toggle switch works best, but you can also just connect a jump wire 
 
 ```
          Pico                    Toggle Switch
-┌─────────────────────┐     ┌─────────────────────┐
-│GPIO6 / Passthrough  │ ──▸ │pin 1 in    pin 1 out│ ──┐
-│GPIO7 / DTM_Playback │ ──▸ │pin 2 in    pin 2 out│ ──┤
-│GPIO8 / DTM_Recording│ ──▸ │pin 3 in    pin 3 out│ ──┤
-│                     │     └─────────────────────┘   │ 
-│                  GND│ ◂─────────────────────────────┘
+┌─────────────────────┐     ┌──────────────────────┐
+│ Passthrough   GPIO6 │ ──▸ │ pin 1 in   pin 1 out │ ──┐
+│ DTM_Playback  GPIO7 │ ──▸ │ pin 2 in   pin 2 out │ ──┤
+│ DTM_Recording GPIO8 │ ──▸ │ pin 3 in   pin 3 out │ ──┤
+│                     │     └──────────────────────┘   │ 
+│                  GND│ ◂──────────────────────────────┘
 └─────────────────────┘ 
 ```
 
