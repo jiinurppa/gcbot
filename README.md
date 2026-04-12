@@ -42,6 +42,12 @@ gcbot is powered by the GameCube `3V3` line, but you could also use the `5V` lin
 
 ![gcbot pinout](/img/pinout.svg)
 
+### Controller Pinout
+
+Label colors below should correspond to wire colors in official controllers.
+
+<img alt="Controller pinout" src="./img/gc_controller_pinout.png" width="384">
+
 ### Mode Selection Wiring
 
 A three-way toggle switch works best, but you can also just connect a jump wire from GPIO6/7/8 to GND. The GPIO pins have pull-ups enabled. If nothing is connected, gcbot will default to **Passthrough** mode.
