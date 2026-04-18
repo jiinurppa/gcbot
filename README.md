@@ -36,6 +36,10 @@ You can check out a video of how **DTM_Recording** and **DTM_Playback** modes ru
 4. **SDHC card** formatted as `FAT32`. MMC or SDSC will not work. Don't keep important files on this card!
 5. **A three-way toggle switch** is optional, but makes switching modes a lot faster.
 
+<img alt ="gcbot wired up. The Pico board is a Pimoroni Pico Plus 2 with stacking headers." src="./img/hardware.jpg" width="640">
+
+gcbot wired up. The Pico board is a Pimoroni Pico Plus 2 with stacking headers.
+
 ## Wiring
 
 gcbot is powered by the GameCube `3V3` line, but you could also use the `5V` line connected to `VBUS`, since controller rumble is disabled.
